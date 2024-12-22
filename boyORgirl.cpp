@@ -7,7 +7,7 @@ int main(){
     for(int i=0;i<name.size();i++){
         st.insert(name[i]);
     }
-    int decider=st.size();
+    int ecider=st.size();
     if(decider%2==0){
         cout<<"CHAT WITH HER!"<<endl;
     }
