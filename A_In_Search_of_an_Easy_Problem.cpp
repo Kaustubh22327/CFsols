@@ -18,5 +18,5 @@ int main(){
     else{
         cout<<"EASY";
     }
-    return 0;
+    return 1;
 }
