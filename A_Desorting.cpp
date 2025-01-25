@@ -22,7 +22,7 @@ int main(){
             cout<<1<<endl;
         }
         else{
-            cout<<mingap/2+1<<endl;
+            cout<<mingap/2+1<<endl; 
         }
 
         
