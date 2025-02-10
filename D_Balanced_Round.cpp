@@ -1,35 +1,68 @@
+// #include <bits/stdc++.h>
+// using namespace std;
+// void solve() {
+//     int n, k;
+//     cin >> n >> k;
+
+//     vector<int> nums(n);
+//     for (int i = 0; i < n; ++i) {
+//         cin >> nums[i];
+//     }
+
+    
+//     sort(all(nums));
+
+//     int cnt = 1, ans = 1; 
+//     for (int i = 1; i < n; ++i) {
+//         if (nums[i] - nums[i - 1] > k) {
+//             cnt = 1;
+//         } else {
+//             ++cnt; 
+//         }
+//         ans = max(ans, cnt); 
+//     }
+
+   
+//     cout << n - ans << '\n';
+// }
+
+// int32_t main() {
+//     fast_io();
+//     int t;  
+//     cin >> t;  
+//     while (t--) {
+//         solve(); 
+//     }
+//     return 0; 
+// }
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t;
-    cin>>t;
-
-    while (t--) {
-        int n,k;
-        cin>>n>>k;
-        vector<int> a(n);
-        for (int i=0; i<n; i++) {
-            cin>>a[i];
+void solve() {
+    int n, k;
+    cin >> n >> k;
+    vector<int> nums(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> nums[i];
+    }
+    sort(nums.begin(),nums.end());
+    int cnt = 1, ans = 1; 
+    for (int i = 1; i < n; ++i) {
+        if (nums[i] - nums[i - 1] > k) {
+            cnt = 1;
+        } else {
+            ++cnt; 
         }
-
-        sort(a.begin(), a.end());
-
-        int maxValidLength=0;
-        int i=0;
-        for (int j=0; j<n; j++) {
-            while (a[j]-a[i]>k) {
-                i++;
-            }
-            maxValidLength=max(maxValidLength, j-i+1);
-        }
-
-        int toRemove=n-maxValidLength;
-        cout<<toRemove<<'\n';
+        ans = max(ans, cnt); 
     }
 
-    return 0;
+   
+    cout << n - ans << '\n';
+}
+int main() {
+    int t;  
+    cin >> t;  
+    while (t--) {
+        solve(); 
+    }
+
 }
