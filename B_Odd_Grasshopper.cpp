@@ -1,29 +1,28 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-
-void solve() {
-    long long x,n;
-    cin>>x>>n;
-    for(long long i=1;i<=n;i++){
-        if(x%2==0){
-            x=x-i;
-        }
-        else{
-            x=x+i;
-        }
+long long findFinalPosition(long long x0, long long n) {
+    if (n == 0) return x0;
+    long long remainder = n % 4;
+    if (x0 % 2 == 0) {
+        if (remainder == 1) return x0 - n;
+        if (remainder == 2) return x0 + 1;
+        if (remainder == 3) return x0 - (n + 1);
+    } else {
+        if (remainder == 1) return x0 + n;
+        if (remainder == 2) return x0 - 1;
+        if (remainder == 3) return x0 + (n + 1);
     }
-    cout<<x<<endl;
-    
+    return x0;
 }
-int main(){
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    long long t;
+    int t;
     cin >> t;
     while (t--) {
-        solve();
+        long long x0, n;
+        cin >> x0 >> n;
+        cout << findFinalPosition(x0, n) << "\n";
     }
-
     return 0;
 }
