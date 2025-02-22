@@ -25,5 +25,3 @@ int main(){
         cout<<"Oh, my keyboard!"<<endl;
     }
 }
-
-//pangram
