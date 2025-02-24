@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-
 int main() {
     string s;
     cin >> s;
@@ -38,7 +37,6 @@ int main() {
              res += "+";
         }
     }
-
     cout << res << endl;
     return 0;
 }
